@@ -5,7 +5,9 @@ This document explains how this fork produces a kernel for **Xiaomi Pad 5 Pro (e
 - boots correctly on **LineageOS 23.2 (Android 16)** (the official APTKernel releases hang on elish),
 - includes a **kernel-level root** (ReSukiSU, a KernelSU fork for non-GKI kernels) plus **SuSFS** root hiding.
 
-Everything is reproducible from this repository's `android16-aptusitu-new` branch.
+> **Disclaimer:** this is **personal, unofficial documentation — treat it as one person's experience, verify
+> against your own device and the upstream docs.** It's not guaranteed to apply to every elish / every ROM / every
+> LOS build, and flashing correctly is your own responsibility. Use at your own risk.
 
 ---
 
