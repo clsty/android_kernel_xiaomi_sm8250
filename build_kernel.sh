@@ -251,9 +251,12 @@ build_target() {
     # 4. AOSP configurations
     if [ "$OS_TYPE" == "aosp" ]; then
         echo "[*] Injecting AOSP specific configurations..."
+        # CONFIG_KSU_DEBUG: allow_shell=true（adb shell / uid2000 直接 root）。
+        # 用于诊断：管理器未识别驱动时先借它打通 root；验证后建议移除（安全项）。
         scripts/config --file "${OUT_DIR}/.config" \
             -e REKERNEL \
-            -e REKERNEL_NETWORK
+            -e REKERNEL_NETWORK \
+            -e KSU_DEBUG
     fi
 
     # We always need to re-evaluate dependencies because BBG is injected unconditionally
